@@ -1,0 +1,65 @@
+﻿@model IEnumerable<HealthSolutions_MVC.Models.Profissional>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProfissional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimentoProfissional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoSexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CpfProfissional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnderecoProfissional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoProfissional)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProfissional)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimentoProfissional)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoSexo.TipoSexoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpfProfissional)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnderecoProfissional)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoProfissional.TipoProfissionalId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProfissionalId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProfissionalId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProfissionalId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
