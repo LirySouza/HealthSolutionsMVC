@@ -1,12 +1,12 @@
 ﻿@model HealthSolutions_MVC.Models.Paciente
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Paciente";
 }
 
-<h1>Delete</h1>
+<h1>Deletar</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Tem certeza que deseja deletar isso?</h3>
 <div>
     <h4>Paciente</h4>
     <hr />
@@ -51,7 +51,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="PacienteId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar à Lista</a>
     </form>
 </div>
