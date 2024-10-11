@@ -20,6 +20,7 @@ namespace HealthSolutions_MVC.Models
 
         [ForeignKey("TipoSexoId")]
         public int TipoSexoId { get; set; }
+        [Display(Name = "Sexo")]
         public TipoSexo? TipoSexo { get; set; }
 
         [Column("CpfPaciente")]

@@ -24,6 +24,7 @@ namespace HealthSolutions_MVC.Models
 
         [ForeignKey("ProfissionalId")]
         public int ProfissionalId { get; set; }
+        [Display(Name = "Nome do Profissional")]
         public Profissional? Profissional { get; set; }
 
         [Column("DataConsulta")]
