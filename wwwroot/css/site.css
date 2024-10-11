@@ -13,7 +13,7 @@ html {
 }
 .nav-link {
     margin-right: 80px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -26,16 +26,17 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-color: #eee6e6 !important;
+    margin-bottom: 60px;
+    background-color: #eee6e6 !important;
+    font-family: FreeMono, monospace;
 }
 .navbar-brand {
-    
-    margin-left: 20px;
-    margin-right: 25px;
+    margin-top: -15px;
+    margin-left: 0px;
+    margin-right: 15px;
 }
 .navbar-brand img {
-    width: 80px;
+    width: 75px;
     height: 75px;
 }
 .btn-primary{

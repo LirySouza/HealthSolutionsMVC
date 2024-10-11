@@ -16,6 +16,7 @@ namespace HealthSolutions_MVC.Models
 
         [ForeignKey("FormaPagamentoId")]
         public int FormaPagamentoId { get; set; }
+        [Display(Name = " Forma de Pagamento")]
         public FormaPagamento? FormaPagamento { get; set; }
 
         [Column("ValorPagamento")]
