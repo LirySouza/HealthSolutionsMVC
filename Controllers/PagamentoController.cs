@@ -48,8 +48,8 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Pagamento/Create
         public IActionResult Create()
         {
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "ConsultaId");
-            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "FormaPagamentoId");
+            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta");
+            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace HealthSolutions_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "ConsultaId", pagamento.ConsultaId);
-            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "FormaPagamentoId", pagamento.FormaPagamentoId);
+            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta", pagamento.ConsultaId);
+            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento", pagamento.FormaPagamentoId);
             return View(pagamento);
         }
 
@@ -84,8 +84,8 @@ namespace HealthSolutions_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "ConsultaId", pagamento.ConsultaId);
-            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "FormaPagamentoId", pagamento.FormaPagamentoId);
+            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta", pagamento.ConsultaId);
+            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento", pagamento.FormaPagamentoId);
             return View(pagamento);
         }
 
@@ -121,8 +121,8 @@ namespace HealthSolutions_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "ConsultaId", pagamento.ConsultaId);
-            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "FormaPagamentoId", pagamento.FormaPagamentoId);
+            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta", pagamento.ConsultaId);
+            ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento", pagamento.FormaPagamentoId);
             return View(pagamento);
         }
 
