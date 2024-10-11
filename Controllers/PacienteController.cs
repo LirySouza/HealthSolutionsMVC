@@ -47,7 +47,7 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Paciente/Create
         public IActionResult Create()
         {
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId");
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace HealthSolutions_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId", paciente.TipoSexoId);
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo", paciente.TipoSexoId);
             return View(paciente);
         }
 
@@ -81,7 +81,7 @@ namespace HealthSolutions_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId", paciente.TipoSexoId);
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo", paciente.TipoSexoId);
             return View(paciente);
         }
 
@@ -117,7 +117,7 @@ namespace HealthSolutions_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId", paciente.TipoSexoId);
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo", paciente.TipoSexoId);
             return View(paciente);
         }
 

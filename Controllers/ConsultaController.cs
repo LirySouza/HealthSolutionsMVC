@@ -48,8 +48,8 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Consulta/Create
         public IActionResult Create()
         {
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "PacienteId");
-            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "ProfissionalId");
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente");
+            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace HealthSolutions_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "PacienteId", consulta.PacienteId);
-            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "ProfissionalId", consulta.ProfissionalId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", consulta.PacienteId);
+            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
 
@@ -84,8 +84,8 @@ namespace HealthSolutions_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "PacienteId", consulta.PacienteId);
-            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "ProfissionalId", consulta.ProfissionalId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", consulta.PacienteId);
+            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
 
@@ -121,8 +121,8 @@ namespace HealthSolutions_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "PacienteId", consulta.PacienteId);
-            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "ProfissionalId", consulta.ProfissionalId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", consulta.PacienteId);
+            ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
 

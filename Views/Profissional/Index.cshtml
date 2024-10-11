@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.DataNascimentoProfissional)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoSexo.TipoSexoId)
+                @Html.DisplayFor(modelItem => item.TipoSexo.NomeTipoSexo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CpfProfissional)
@@ -52,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.EnderecoProfissional)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoProfissional.TipoProfissionalId)
+                @Html.DisplayFor(modelItem => item.TipoProfissional.NomeTipoProfissional)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProfissionalId">Editar</a> 

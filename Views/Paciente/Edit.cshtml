@@ -14,32 +14,32 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PacienteId" />
             <div class="form-group">
-                <label asp-for="NomePaciente" class="control-label"></label>
+                <label asp-for="NomePaciente" class="control-label">Nome Completo</label>
                 <input asp-for="NomePaciente" class="form-control" />
                 <span asp-validation-for="NomePaciente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataNascimentoPaciente" class="control-label"></label>
+                <label asp-for="DataNascimentoPaciente" class="control-label">Data de Nascimento</label>
                 <input asp-for="DataNascimentoPaciente" class="form-control" />
                 <span asp-validation-for="DataNascimentoPaciente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoSexoId" class="control-label"></label>
+                <label asp-for="TipoSexoId" class="control-label">Sexo</label>
                 <select asp-for="TipoSexoId" class="form-control" asp-items="ViewBag.TipoSexoId"></select>
                 <span asp-validation-for="TipoSexoId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CpfPaciente" class="control-label"></label>
+                <label asp-for="CpfPaciente" class="control-label">CPF</label>
                 <input asp-for="CpfPaciente" class="form-control" />
                 <span asp-validation-for="CpfPaciente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EnderecoPaciente" class="control-label"></label>
+                <label asp-for="EnderecoPaciente" class="control-label">Endereço</label>
                 <input asp-for="EnderecoPaciente" class="form-control" />
                 <span asp-validation-for="EnderecoPaciente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TelefonePaciente" class="control-label"></label>
+                <label asp-for="TelefonePaciente" class="control-label">Telefone</label>
                 <input asp-for="TelefonePaciente" class="form-control" />
                 <span asp-validation-for="TelefonePaciente" class="text-danger"></span>
             </div>

@@ -13,31 +13,31 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NomeProfissional" class="control-label"></label>
+                <label asp-for="NomeProfissional" class="control-label">Nome Completo</label>
                 <input asp-for="NomeProfissional" class="form-control" />
                 <span asp-validation-for="NomeProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataNascimentoProfissional" class="control-label"></label>
+                <label asp-for="DataNascimentoProfissional" class="control-label">Data Nascimento</label>
                 <input asp-for="DataNascimentoProfissional" class="form-control" />
                 <span asp-validation-for="DataNascimentoProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoSexoId" class="control-label"></label>
+                <label asp-for="TipoSexoId" class="control-label">Sexo</label>
                 <select asp-for="TipoSexoId" class ="form-control" asp-items="ViewBag.TipoSexoId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="CpfProfissional" class="control-label"></label>
+                <label asp-for="CpfProfissional" class="control-label">CPF</label>
                 <input asp-for="CpfProfissional" class="form-control" />
                 <span asp-validation-for="CpfProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EnderecoProfissional" class="control-label"></label>
+                <label asp-for="EnderecoProfissional" class="control-label">Endereço</label>
                 <input asp-for="EnderecoProfissional" class="form-control" />
                 <span asp-validation-for="EnderecoProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoProfissionalId" class="control-label"></label>
+                <label asp-for="TipoProfissionalId" class="control-label">Profissional</label>
                 <select asp-for="TipoProfissionalId" class ="form-control" asp-items="ViewBag.TipoProfissionalId"></select>
             </div>
             <div class="form-group">

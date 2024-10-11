@@ -48,8 +48,8 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Profissional/Create
         public IActionResult Create()
         {
-            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "TipoProfissionalId");
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId");
+            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "NomeTipoProfissional");
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace HealthSolutions_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "TipoProfissionalId", profissional.TipoProfissionalId);
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId", profissional.TipoSexoId);
+            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "NomeTipoProfissional", profissional.TipoProfissionalId);
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo", profissional.TipoSexoId);
             return View(profissional);
         }
 
@@ -84,8 +84,8 @@ namespace HealthSolutions_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "TipoProfissionalId", profissional.TipoProfissionalId);
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId", profissional.TipoSexoId);
+            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "NomeTipoProfissional", profissional.TipoProfissionalId);
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo", profissional.TipoSexoId);
             return View(profissional);
         }
 
@@ -121,8 +121,8 @@ namespace HealthSolutions_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "TipoProfissionalId", profissional.TipoProfissionalId);
-            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "TipoSexoId", profissional.TipoSexoId);
+            ViewData["TipoProfissionalId"] = new SelectList(_context.TipoProfissional, "TipoProfissionalId", "NomeTipoProfissional", profissional.TipoProfissionalId);
+            ViewData["TipoSexoId"] = new SelectList(_context.TipoSexo, "TipoSexoId", "NomeTipoSexo", profissional.TipoSexoId);
             return View(profissional);
         }
 
