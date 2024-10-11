@@ -82,4 +82,8 @@ body {
     background-color: #dc3545 !important;
     color: white !important;
 }
+.form-control {
+    background-color: #E5DFDD !important;
+    border: 2px #AAB4BF solid !important;
+}
 
