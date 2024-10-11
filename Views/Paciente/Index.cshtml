@@ -7,7 +7,7 @@
 <h1>Cadastro</h1>
 
 <p>
-    <a asp-action="Create">Cadastrar Novo</a>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Novo</a>
 </p>
 <table class="table">
     <thead>
@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.TelefonePaciente)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PacienteId">Editar</a> 
-                <a asp-action="Details" asp-route-id="@item.PacienteId">Detalhes</a> 
-                <a asp-action="Delete" asp-route-id="@item.PacienteId">Deletar</a>
+                    <a asp-action="Edit" asp-route-id="@item.PacienteId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.PacienteId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.PacienteId" class="btn btn-secundary"><i class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
 }
