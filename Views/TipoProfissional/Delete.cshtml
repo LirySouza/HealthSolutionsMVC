@@ -1,14 +1,14 @@
 ﻿@model HealthSolutions_MVC.Models.TipoProfissional
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Tipo Profissional";
 }
 
-<h1>Delete</h1>
+<h1>Deletar</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Tem certeza que deseja deletar isso?</h3>
 <div>
-    <h4>TipoProfissional</h4>
+    <h4>Tipo Do Profissional</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -21,7 +21,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="TipoProfissionalId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-primary">Voltar à Lista</a>
     </form>
 </div>

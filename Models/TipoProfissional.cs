@@ -11,7 +11,7 @@ namespace HealthSolutions_MVC.Models
         public int TipoProfissionalId { get; set; }
 
         [Column("NomeTipoProfissional")]
-        [Display(Name = "Tipo Profissional")]
+        [Display(Name = "Profissional")]
         public string NomeTipoProfissional { get; set; } = string.Empty;
     }
 }
