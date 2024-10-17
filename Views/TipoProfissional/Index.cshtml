@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<HealthSolutions_MVC.Models.TipoProfissional>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "TipoProfissional";
 }
 
-<h1>Index</h1>
+<h1>Cadastro </h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Novo</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.NomeTipoProfissional)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TipoProfissionalId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TipoProfissionalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TipoProfissionalId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.TipoProfissionalId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.TipoProfissionalId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.TipoProfissionalId" class="btn btn-secundary"><i class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
 }

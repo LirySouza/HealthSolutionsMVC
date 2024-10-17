@@ -11,7 +11,7 @@ namespace HealthSolutions_MVC.Models
         public int TipoSexoId { get; set; }
 
         [Column("NomeTipoSexo")]
-        [Display(Name = "Tipo Sexo")]
+        [Display(Name = "Sexo")]
         public string NomeTipoSexo { get; set; } = string.Empty;
     }
 }

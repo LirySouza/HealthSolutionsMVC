@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto> //Liriany
-   (options => options.UseSqlServer("Data Source=SB-1490643\\SQLSENAI;Initial Catalog = HealthSolutions-MVC;Integrated Security = True;TrustServerCertificate = True"));
+   (options => options.UseSqlServer("Data Source=SB-1490648\\SQLSENAI;Initial Catalog = HealthSolutions-MVC;Integrated Security = True;TrustServerCertificate = True"));
 
 var app = builder.Build();
 
