@@ -1,0 +1,89 @@
+﻿body {
+    text-align: center;
+    background-color: #8BA6AC;
+}
+
+.text-center {
+    width: 294px;
+    height: 432px;
+    background-color: #9DBBF0;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 30px;
+    margin-top: 115px;
+}
+
+.logo {
+    width: 240px;
+    height: 120px;
+    object-fit: cover;
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    font-family: Consolas;
+}
+
+.campos input {
+    width: 100%;
+    height: 40px;
+    background-color: #C5D5D8;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.btn-big {
+    width: 90%;
+    height: 40px;
+    background: none;
+    color: black;
+    background-color: #C5D5D8;
+    border: 2px black solid;
+    border-radius: 4px;
+    padding: 0.150rem 0.250rem;
+    text-decoration: none;
+    font-family: Verdana;
+    font-size: 15px;
+}
+
+.mensagem {
+    font-family: Consolas;
+    color: #A076F9;
+}
+
+.input-email {
+    width: 90%;
+    height: 35px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    background-color: #C5D5D8;
+}
+.texto-input {
+    color: black;
+}
+.login-caixa {
+    width: 25%;
+    height: 450px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    align-items: center;
+    margin-left: 38.8%;
+    margin-top: 8%;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.big-caixa {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
