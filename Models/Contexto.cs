@@ -23,6 +23,8 @@ namespace HealthSolutions_MVC.Models
 
         public DbSet<Profissional> Profissional { get; set; }
 
+        public DbSet<HealthSolutions_MVC.Models.Usuario> Usuario { get; set; } = default!;
+
     }
 
 }

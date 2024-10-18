@@ -1,0 +1,31 @@
+﻿@model HealthSolutions_MVC.Models.Usuario
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
+<body>
+    <div class="big-caixa">
+    <form asp-action="Login">
+        <div class="login-caixa">
+            <img class="logo" src="~/img/LogoGrande.jpg" />
+            <div class="input-field">
+                <label asp-for="UsuarioEmail"></label>
+                <input class="input-email" asp-for="UsuarioEmail" />
+                    <span style="display:block; float: left" asp-validation-for="UsuarioEmail"></span>
+            </div>
+            <div class="input-field">
+                <label asp-for="UsuarioSenha"></label>
+                <input class="input-email" asp-for="UsuarioSenha" type="password" />
+                    <span style="display:block; float: left" asp-validation-for="UsuarioSenha"></span>
+            </div>
+            <h4 class="mensagem">@ViewBag.Mensagem</h4>
+
+            <div class="input-field">
+                <input class="btn-big" type="submit" value="Logar" />
+            </div>
+        </div>
+
+    </form>
+</div>
+</body>
+
