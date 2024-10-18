@@ -10,9 +10,13 @@ html {
 
 .navbar {
     background-color: #5c9da8 !important;
+    
+}
+.navbar-nav {
+    justify-content: center !important;
+    gap: 30px !important;
 }
 .nav-link {
-    margin-right: 80px;
     font-size: 16px;
 }
 
