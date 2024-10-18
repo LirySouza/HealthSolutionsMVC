@@ -1,13 +1,13 @@
 ﻿@model HealthSolutions_MVC.Models.Usuario
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Usuário";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>Usuario</h4>
+    <h4>Usuário</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -31,6 +31,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.UsuarioId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.UsuarioId" class="btn btn-primary">Editar</a> 
+    <a asp-action="Index" class="btn btn-primary">Voltar à Lista</a>
 </div>
