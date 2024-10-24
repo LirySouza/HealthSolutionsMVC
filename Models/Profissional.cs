@@ -18,6 +18,11 @@ namespace HealthSolutions_MVC.Models
         [Display(Name = "Data de Nascimento")]
         public string DataNascimentoProfissional { get; set; } = string.Empty;
 
+        [Column("FotoProfissional")]
+        [Display(Name = "Foto do Profissional")]
+
+        public string FotoProfissional { get; set; } = string.Empty;
+
         [ForeignKey("TipoSexoId")]
         public int TipoSexoId { get; set; }
         [Display(Name = "Sexo")]

@@ -11,10 +11,30 @@ namespace HealthSolutions_MVC.Models
 
         public int UsuarioId { get; set; }
 
+        [Column("FotoUsuario")]
+        [Display(Name = "Foto do Usuario")]
+
+        public string FotoUsuario { get;set; } = string.Empty;
+
         [Column("UsuarioNome")]
         [Display(Name = "Nome do Usuário")]
 
         public string UsuarioNome { get; set; } = string.Empty;
+
+        [Column("UsuarioCpf")]
+        [Display(Name = "Cpf do Usuário")]
+
+        public string UsuarioCpf { get; set; } = string.Empty;
+
+        [Column("UsuarioEndereco")]
+        [Display(Name = "Endereço do Usuário")]
+
+        public string UsuarioEndereco { get; set; } = string.Empty;
+
+        [Column("UsuarioTelefone")]
+        [Display(Name = "Telefone do Usuário")]
+
+        public string UsuarioTelefone { get; set; } = string.Empty;
 
         [Column("UsuarioEmail")]
         [Display(Name = "Email do Usuário")]
