@@ -13,9 +13,8 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NomeConsulta" class="control-label">Consulta</label>
-                <input asp-for="NomeConsulta" class="form-control" />
-                <span asp-validation-for="NomeConsulta" class="text-danger"></span>
+                <label asp-for="TipoConsultaId" class="control-label">Tipo Consulta</label>
+                <select asp-for="TipoConsultaId" class="form-control" asp-items="ViewBag.TipoConsultaId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="PacienteId" class="control-label">Paciente</label>
