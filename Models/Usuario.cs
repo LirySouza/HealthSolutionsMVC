@@ -12,7 +12,7 @@ namespace HealthSolutions_MVC.Models
         public int UsuarioId { get; set; }
 
         [Column("FotoUsuario")]
-        [Display(Name = "Foto do Usuario")]
+        [Display(Name = "Foto do Usuário")]
 
         public string FotoUsuario { get;set; } = string.Empty;
 
