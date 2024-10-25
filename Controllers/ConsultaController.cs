@@ -21,7 +21,7 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Consulta
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Consulta.Include(c => c.Paciente).Include(c => c.Profissional);
+            var contexto = _context.Consulta.Include(c => c.Paciente).Include(c => c.Profissional).Include(c => c.TipoConsulta);
             return View(await contexto.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace HealthSolutions_MVC.Controllers
             var consulta = await _context.Consulta
                 .Include(c => c.Paciente)
                 .Include(c => c.Profissional)
+                .Include(c => c.TipoConsulta)
                 .FirstOrDefaultAsync(m => m.ConsultaId == id);
             if (consulta == null)
             {
@@ -49,6 +50,7 @@ namespace HealthSolutions_MVC.Controllers
         public IActionResult Create()
         {
             ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente");
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta");
             ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional");
             return View();
         }
@@ -58,7 +60,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ConsultaId,NomeConsulta,PacienteId,ObsConsulta,ProfissionalId,DataConsulta")] Consulta consulta)
+        public async Task<IActionResult> Create([Bind("ConsultaId, TipoConsultaId, PacienteId,ObsConsulta,ProfissionalId,DataConsulta")] Consulta consulta)
         {
             if (ModelState.IsValid)
             {
@@ -67,6 +69,7 @@ namespace HealthSolutions_MVC.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", consulta.PacienteId);
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta", consulta.TipoConsultaId);
             ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
@@ -85,6 +88,7 @@ namespace HealthSolutions_MVC.Controllers
                 return NotFound();
             }
             ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", consulta.PacienteId);
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta", consulta.TipoConsultaId);
             ViewData["ProfissionalId"] = new SelectList(_context.Profissional, "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
@@ -94,7 +98,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ConsultaId,NomeConsulta,PacienteId,ObsConsulta,ProfissionalId,DataConsulta")] Consulta consulta)
+        public async Task<IActionResult> Edit(int id, [Bind("ConsultaId, TipoConsultaId, PacienteId,ObsConsulta,ProfissionalId,DataConsulta")] Consulta consulta)
         {
             if (id != consulta.ConsultaId)
             {
@@ -137,6 +141,7 @@ namespace HealthSolutions_MVC.Controllers
             var consulta = await _context.Consulta
                 .Include(c => c.Paciente)
                 .Include(c => c.Profissional)
+                .Include(c => c.TipoConsulta)
                 .FirstOrDefaultAsync(m => m.ConsultaId == id);
             if (consulta == null)
             {

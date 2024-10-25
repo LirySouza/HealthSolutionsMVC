@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HealthSolutions_MVC.Models.TipoConsulta>
+
+@{
+    ViewData["Title"] = "Tipo Consulta";
+}
+
+<h1>Tipo Consulta</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeTipoConsulta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeTipoConsulta)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.TipoConsultaId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.TipoConsultaId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.TipoConsultaId" class="btn btn-secundary"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

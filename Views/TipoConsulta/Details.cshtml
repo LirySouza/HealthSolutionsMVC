@@ -1,0 +1,24 @@
+﻿@model HealthSolutions_MVC.Models.TipoConsulta
+
+@{
+    ViewData["Title"] = "Tipo Consulta";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Tipo Consulta</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeTipoConsulta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeTipoConsulta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TipoConsultaId" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-primary">Voltar à Lista</a>
+</div>

@@ -13,8 +13,12 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ConsultaId" class="control-label">Consulta</label>
-                <select asp-for="ConsultaId" class ="form-control" asp-items="ViewBag.ConsultaId"></select>
+                <label asp-for="PacienteId" class="control-label">Paciente</label>
+                <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.PacienteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoConsultaId" class="control-label">Tipo Consulta</label>
+                <select asp-for="TipoConsultaId" class ="form-control" asp-items="ViewBag.TipoConsultaId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="FormaPagamentoId" class="control-label">Forma de Pagamento</label>
