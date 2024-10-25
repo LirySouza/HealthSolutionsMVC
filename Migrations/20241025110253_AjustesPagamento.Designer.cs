@@ -4,6 +4,7 @@ using HealthSolutions_MVC.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthSolutions_MVC.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20241025110253_AjustesPagamento")]
+    partial class AjustesPagamento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -186,11 +189,6 @@ namespace HealthSolutions_MVC.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("EnderecoProfissional");
 
-                    b.Property<string>("FotoProfissional")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("FotoProfissional");
-
                     b.Property<string>("NomeProfissional")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
@@ -277,25 +275,10 @@ namespace HealthSolutions_MVC.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
 
-                    b.Property<string>("FotoUsuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("FotoUsuario");
-
-                    b.Property<string>("UsuarioCpf")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("UsuarioCpf");
-
                     b.Property<string>("UsuarioEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("UsuarioEmail");
-
-                    b.Property<string>("UsuarioEndereco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("UsuarioEndereco");
 
                     b.Property<string>("UsuarioNome")
                         .IsRequired()
@@ -306,11 +289,6 @@ namespace HealthSolutions_MVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("UsuarioSenha");
-
-                    b.Property<string>("UsuarioTelefone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("UsuarioTelefone");
 
                     b.HasKey("UsuarioId");
 

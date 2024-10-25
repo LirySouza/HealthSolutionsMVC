@@ -21,7 +21,7 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Pagamento
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Pagamento.Include(p => p.Consulta).Include(p => p.FormaPagamento);
+            var contexto = _context.Pagamento.Include(p => p.Paciente).Include(p => p.TipoConsulta).Include(p => p.FormaPagamento);
             return View(await contexto.ToListAsync());
         }
 
@@ -34,7 +34,8 @@ namespace HealthSolutions_MVC.Controllers
             }
 
             var pagamento = await _context.Pagamento
-                .Include(p => p.Consulta)
+                .Include(p => p.Paciente)
+                .Include(p => p.TipoConsulta)
                 .Include(p => p.FormaPagamento)
                 .FirstOrDefaultAsync(m => m.PagamentoId == id);
             if (pagamento == null)
@@ -48,7 +49,8 @@ namespace HealthSolutions_MVC.Controllers
         // GET: Pagamento/Create
         public IActionResult Create()
         {
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta");
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente");
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta");
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento");
             return View();
         }
@@ -58,7 +60,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PagamentoId,ConsultaId,FormaPagamentoId,ValorPagamento,DataPagamento,ObsPagamento")] Pagamento pagamento)
+        public async Task<IActionResult> Create([Bind("PagamentoId,PacienteId,ConsultaId,TipoConsultaId,FormaPagamentoId,ValorPagamento,DataPagamento,ObsPagamento")] Pagamento pagamento)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +68,8 @@ namespace HealthSolutions_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta", pagamento.ConsultaId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", pagamento.PacienteId);
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta", pagamento.TipoConsultaId);
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento", pagamento.FormaPagamentoId);
             return View(pagamento);
         }
@@ -84,7 +87,8 @@ namespace HealthSolutions_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta", pagamento.ConsultaId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", pagamento.PacienteId);
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta", pagamento.TipoConsultaId);
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento", pagamento.FormaPagamentoId);
             return View(pagamento);
         }
@@ -94,7 +98,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PagamentoId,ConsultaId,FormaPagamentoId,ValorPagamento,DataPagamento,ObsPagamento")] Pagamento pagamento)
+        public async Task<IActionResult> Edit(int id, [Bind("PagamentoId,PacienteId,ConsultaId,TipoConsultaId,FormaPagamentoId,ValorPagamento,DataPagamento,ObsPagamento")] Pagamento pagamento)
         {
             if (id != pagamento.PagamentoId)
             {
@@ -121,7 +125,8 @@ namespace HealthSolutions_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConsultaId"] = new SelectList(_context.Consulta, "ConsultaId", "NomeConsulta", pagamento.ConsultaId);
+            ViewData["PacienteId"] = new SelectList(_context.Paciente, "PacienteId", "NomePaciente", pagamento.PacienteId);
+            ViewData["TipoConsultaId"] = new SelectList(_context.TipoConsulta, "TipoConsultaId", "NomeTipoConsulta", pagamento.TipoConsultaId);
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormaPagamento, "FormaPagamentoId", "NomeFormaPagamento", pagamento.FormaPagamentoId);
             return View(pagamento);
         }
@@ -135,7 +140,8 @@ namespace HealthSolutions_MVC.Controllers
             }
 
             var pagamento = await _context.Pagamento
-                .Include(p => p.Consulta)
+                .Include(p => p.Paciente)
+                .Include(p => p.TipoConsulta)
                 .Include(p => p.FormaPagamento)
                 .FirstOrDefaultAsync(m => m.PagamentoId == id);
             if (pagamento == null)

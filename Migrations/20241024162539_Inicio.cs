@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HealthSolutions_MVC.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoInicial : Migration
+    public partial class Inicio : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,19 @@ namespace HealthSolutions_MVC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FormaPagamento", x => x.FormaPagamentoId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TipoConsulta",
+                columns: table => new
+                {
+                    TipoConsultaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NomeTipoConsulta = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoConsulta", x => x.TipoConsultaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,6 +61,21 @@ namespace HealthSolutions_MVC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TipoSexo", x => x.TipoSexoId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuario",
+                columns: table => new
+                {
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UsuarioNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuarioEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuarioSenha = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuario", x => x.UsuarioId);
                 });
 
             migrationBuilder.CreateTable(
@@ -110,7 +138,7 @@ namespace HealthSolutions_MVC.Migrations
                 {
                     ConsultaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomeConsulta = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TipoConsultaId = table.Column<int>(type: "int", nullable: false),
                     PacienteId = table.Column<int>(type: "int", nullable: false),
                     ObsConsulta = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProfissionalId = table.Column<int>(type: "int", nullable: false),
@@ -123,13 +151,17 @@ namespace HealthSolutions_MVC.Migrations
                         name: "FK_Consulta_Paciente_PacienteId",
                         column: x => x.PacienteId,
                         principalTable: "Paciente",
-                        principalColumn: "PacienteId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PacienteId");
                     table.ForeignKey(
                         name: "FK_Consulta_Profissional_ProfissionalId",
                         column: x => x.ProfissionalId,
                         principalTable: "Profissional",
                         principalColumn: "ProfissionalId");
+                    table.ForeignKey(
+                        name: "FK_Consulta_TipoConsulta_TipoConsultaId",
+                        column: x => x.TipoConsultaId,
+                        principalTable: "TipoConsulta",
+                        principalColumn: "TipoConsultaId");
                 });
 
             migrationBuilder.CreateTable(
@@ -172,6 +204,11 @@ namespace HealthSolutions_MVC.Migrations
                 column: "ProfissionalId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Consulta_TipoConsultaId",
+                table: "Consulta",
+                column: "TipoConsultaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Paciente_TipoSexoId",
                 table: "Paciente",
                 column: "TipoSexoId");
@@ -204,6 +241,9 @@ namespace HealthSolutions_MVC.Migrations
                 name: "Pagamento");
 
             migrationBuilder.DropTable(
+                name: "Usuario");
+
+            migrationBuilder.DropTable(
                 name: "Consulta");
 
             migrationBuilder.DropTable(
@@ -214,6 +254,9 @@ namespace HealthSolutions_MVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Profissional");
+
+            migrationBuilder.DropTable(
+                name: "TipoConsulta");
 
             migrationBuilder.DropTable(
                 name: "TipoProfissional");
