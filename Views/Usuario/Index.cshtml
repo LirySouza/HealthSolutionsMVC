@@ -13,13 +13,19 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.FotoUsuario)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.UsuarioNome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsuarioEmail)
+                @Html.DisplayNameFor(model => model.UsuarioCpf)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsuarioSenha)
+                @Html.DisplayNameFor(model => model.UsuarioEndereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioTelefone)
             </th>
             <th></th>
         </tr>
@@ -28,18 +34,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+               <img src="@item.FotoUsuario" style="height:110px;widht:116px;border-radius:4px;object-fit:cover;">
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.UsuarioNome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEmail)
+                @Html.DisplayFor(modelItem => item.UsuarioCpf)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UsuarioSenha)
+                @Html.DisplayFor(modelItem => item.UsuarioEndereco)
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.UsuarioId"class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
-                    <a asp-action="Delete" asp-route-id="@item.UsuarioId" class="btn btn-secundary"><i class="fa-solid fa-trash-can"></i></a>
+                @Html.DisplayFor(modelItem => item.UsuarioTelefone)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.UsuarioId" class="btn btn-primary"><i class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
 }

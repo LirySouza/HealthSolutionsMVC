@@ -14,9 +14,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="UsuarioId" />
             <div class="form-group">
+                <label asp-for="FotoUsuario" class="control-label"></label>
+                <input asp-for="FotoUsuario" class="form-control" />
+                <span asp-validation-for="FotoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="UsuarioNome" class="control-label"></label>
                 <input asp-for="UsuarioNome" class="form-control" />
                 <span asp-validation-for="UsuarioNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioCpf" class="control-label"></label>
+                <input asp-for="UsuarioCpf" class="form-control" />
+                <span asp-validation-for="UsuarioCpf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioEndereco" class="control-label"></label>
+                <input asp-for="UsuarioEndereco" class="form-control" />
+                <span asp-validation-for="UsuarioEndereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioTelefone" class="control-label"></label>
+                <input asp-for="UsuarioTelefone" class="form-control" />
+                <span asp-validation-for="UsuarioTelefone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="UsuarioEmail" class="control-label"></label>

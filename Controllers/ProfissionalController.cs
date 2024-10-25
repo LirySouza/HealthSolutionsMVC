@@ -58,7 +58,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProfissionalId,NomeProfissional,DataNascimentoProfissional,TipoSexoId,CpfProfissional,EnderecoProfissional,TipoProfissionalId")] Profissional profissional)
+        public async Task<IActionResult> Create([Bind("ProfissionalId,NomeProfissional,DataNascimentoProfissional,FotoProfissional,TipoSexoId,CpfProfissional,EnderecoProfissional,TipoProfissionalId")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProfissionalId,NomeProfissional,DataNascimentoProfissional,TipoSexoId,CpfProfissional,EnderecoProfissional,TipoProfissionalId")] Profissional profissional)
+        public async Task<IActionResult> Edit(int id, [Bind("ProfissionalId,NomeProfissional,DataNascimentoProfissional,FotoProfissional,TipoSexoId,CpfProfissional,EnderecoProfissional,TipoProfissionalId")] Profissional profissional)
         {
             if (id != profissional.ProfissionalId)
             {

@@ -55,7 +55,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UsuarioId,UsuarioNome,UsuarioEmail,UsuarioSenha")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("UsuarioId,FotoUsuario,UsuarioNome,UsuarioCpf,UsuarioEndereco,UsuarioTelefone,UsuarioEmail,UsuarioSenha")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace HealthSolutions_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,UsuarioNome,UsuarioEmail,UsuarioSenha")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,FotoUsuario,UsuarioNome,UsuarioCpf,UsuarioEndereco,UsuarioTelefone,UsuarioEmail,UsuarioSenha")] Usuario usuario)
         {
             if (id != usuario.UsuarioId)
             {

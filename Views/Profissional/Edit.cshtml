@@ -1,10 +1,10 @@
 ﻿@model HealthSolutions_MVC.Models.Profissional
 
 @{
-    ViewData["Title"] = "Profissional";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Editar</h1>
+<h1>Edit</h1>
 
 <h4>Profissional</h4>
 <hr />
@@ -14,44 +14,49 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProfissionalId" />
             <div class="form-group">
-                <label asp-for="NomeProfissional" class="control-label">Nome Completo</label>
+                <label asp-for="NomeProfissional" class="control-label"></label>
                 <input asp-for="NomeProfissional" class="form-control" />
                 <span asp-validation-for="NomeProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataNascimentoProfissional" class="control-label">Data Nascimento</label>
+                <label asp-for="DataNascimentoProfissional" class="control-label"></label>
                 <input asp-for="DataNascimentoProfissional" class="form-control" />
                 <span asp-validation-for="DataNascimentoProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoSexoId" class="control-label">Sexo</label>
+                <label asp-for="FotoProfissional" class="control-label"></label>
+                <input asp-for="FotoProfissional" class="form-control" />
+                <span asp-validation-for="FotoProfissional" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoSexoId" class="control-label"></label>
                 <select asp-for="TipoSexoId" class="form-control" asp-items="ViewBag.TipoSexoId"></select>
                 <span asp-validation-for="TipoSexoId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CpfProfissional" class="control-label">CPF</label>
+                <label asp-for="CpfProfissional" class="control-label"></label>
                 <input asp-for="CpfProfissional" class="form-control" />
                 <span asp-validation-for="CpfProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EnderecoProfissional" class="control-label">Endereço</label>
+                <label asp-for="EnderecoProfissional" class="control-label"></label>
                 <input asp-for="EnderecoProfissional" class="form-control" />
                 <span asp-validation-for="EnderecoProfissional" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoProfissionalId" class="control-label">Profissional</label>
+                <label asp-for="TipoProfissionalId" class="control-label"></label>
                 <select asp-for="TipoProfissionalId" class="form-control" asp-items="ViewBag.TipoProfissionalId"></select>
                 <span asp-validation-for="TipoProfissionalId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" class="btn btn-primary">Voltar à Lista</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
