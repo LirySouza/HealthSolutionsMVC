@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthSolutions_MVC.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241024162539_Inicio")]
-    partial class Inicio
+    [Migration("20241025171840_Correção")]
+    partial class Correção
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -133,9 +133,6 @@ namespace HealthSolutions_MVC.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PagamentoId"));
 
-                    b.Property<int>("ConsultaId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("DataPagamento")
                         .HasColumnType("datetime2")
                         .HasColumnName("DataPagamento");
@@ -148,15 +145,23 @@ namespace HealthSolutions_MVC.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ObsPagamento");
 
+                    b.Property<int>("PacienteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoConsultaId")
+                        .HasColumnType("int");
+
                     b.Property<double>("ValorPagamento")
                         .HasColumnType("float")
                         .HasColumnName("ValorPagamento");
 
                     b.HasKey("PagamentoId");
 
-                    b.HasIndex("ConsultaId");
-
                     b.HasIndex("FormaPagamentoId");
+
+                    b.HasIndex("PacienteId");
+
+                    b.HasIndex("TipoConsultaId");
 
                     b.ToTable("Pagamento");
                 });
@@ -183,6 +188,11 @@ namespace HealthSolutions_MVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("EnderecoProfissional");
+
+                    b.Property<string>("FotoProfissional")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("FotoProfissional");
 
                     b.Property<string>("NomeProfissional")
                         .IsRequired()
@@ -270,10 +280,25 @@ namespace HealthSolutions_MVC.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
 
+                    b.Property<string>("FotoUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("FotoUsuario");
+
+                    b.Property<string>("UsuarioCpf")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UsuarioCpf");
+
                     b.Property<string>("UsuarioEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("UsuarioEmail");
+
+                    b.Property<string>("UsuarioEndereco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UsuarioEndereco");
 
                     b.Property<string>("UsuarioNome")
                         .IsRequired()
@@ -284,6 +309,11 @@ namespace HealthSolutions_MVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("UsuarioSenha");
+
+                    b.Property<string>("UsuarioTelefone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UsuarioTelefone");
 
                     b.HasKey("UsuarioId");
 
@@ -330,21 +360,29 @@ namespace HealthSolutions_MVC.Migrations
 
             modelBuilder.Entity("HealthSolutions_MVC.Models.Pagamento", b =>
                 {
-                    b.HasOne("HealthSolutions_MVC.Models.Consulta", "Consulta")
-                        .WithMany()
-                        .HasForeignKey("ConsultaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HealthSolutions_MVC.Models.FormaPagamento", "FormaPagamento")
                         .WithMany()
                         .HasForeignKey("FormaPagamentoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Consulta");
+                    b.HasOne("HealthSolutions_MVC.Models.Paciente", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("PacienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthSolutions_MVC.Models.TipoConsulta", "TipoConsulta")
+                        .WithMany()
+                        .HasForeignKey("TipoConsultaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("FormaPagamento");
+
+                    b.Navigation("Paciente");
+
+                    b.Navigation("TipoConsulta");
                 });
 
             modelBuilder.Entity("HealthSolutions_MVC.Models.Profissional", b =>

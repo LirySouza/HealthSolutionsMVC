@@ -160,14 +160,14 @@ namespace HealthSolutions_MVC.Controllers
             {
                 _context.Profissional.Remove(profissional);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProfissionalExists(int id)
         {
-          return (_context.Profissional?.Any(e => e.ProfissionalId == id)).GetValueOrDefault();
+            return (_context.Profissional?.Any(e => e.ProfissionalId == id)).GetValueOrDefault();
         }
     }
 }
