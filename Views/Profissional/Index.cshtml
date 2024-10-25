@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.DataNascimentoProfissional)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FotoProfissional)
+                <img src="@Html.DisplayFor(modelItem => item.FotoProfissional)" width="90" height="90" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoSexo.TipoSexoId)
@@ -61,9 +61,9 @@
                 @Html.DisplayFor(modelItem => item.TipoProfissional.TipoProfissionalId)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProfissionalId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProfissionalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProfissionalId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.ProfissionalId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.ProfissionalId" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.ProfissionalId" class="btn btn-primary"><i class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
 }
