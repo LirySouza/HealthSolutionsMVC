@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthSolutions_MVC.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241025114523_TudoNovo")]
-    partial class TudoNovo
+    [Migration("20241025171840_Correção")]
+    partial class Correção
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
