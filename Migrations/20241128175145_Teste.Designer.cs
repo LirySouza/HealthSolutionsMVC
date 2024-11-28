@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthSolutions_MVC.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241025171840_Correção")]
-    partial class Correção
+    [Migration("20241128175145_Teste")]
+    partial class Teste
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,16 +49,11 @@ namespace HealthSolutions_MVC.Migrations
                     b.Property<int>("ProfissionalId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TipoConsultaId")
-                        .HasColumnType("int");
-
                     b.HasKey("ConsultaId");
 
                     b.HasIndex("PacienteId");
 
                     b.HasIndex("ProfissionalId");
-
-                    b.HasIndex("TipoConsultaId");
 
                     b.ToTable("Consulta");
                 });
@@ -334,17 +329,9 @@ namespace HealthSolutions_MVC.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HealthSolutions_MVC.Models.TipoConsulta", "TipoConsulta")
-                        .WithMany()
-                        .HasForeignKey("TipoConsultaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Paciente");
 
                     b.Navigation("Profissional");
-
-                    b.Navigation("TipoConsulta");
                 });
 
             modelBuilder.Entity("HealthSolutions_MVC.Models.Paciente", b =>
