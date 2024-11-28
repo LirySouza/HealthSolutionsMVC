@@ -10,11 +10,6 @@ namespace HealthSolutions_MVC.Models
         [Display(Name = " Código da Consulta")]
         public int ConsultaId { get; set; }
 
-        [ForeignKey("TipoConsultaId")]
-        public int TipoConsultaId { get; set; }
-        [Display(Name = "Tipo Consulta")]
-        public TipoConsulta? TipoConsulta { get; set; }
-
         [ForeignKey("PacienteId")]
         public int PacienteId { get; set; }
         public Paciente? Paciente { get; set; }
